@@ -54,13 +54,15 @@ header .logo span {
 =========================== */
 header nav {
   display: flex;
+  align-items: center; /* tous les liens centrés verticalement */
   gap: 25px;
   flex-wrap: wrap;
-  position: relative; /* important pour dropdown absolute */
+  position: relative;
   z-index: 10;
 }
 
-header nav a {
+header nav a,
+header nav .dropdown > a {
   color: #f3f3f3;
   text-decoration: none;
   font-weight: 600;
@@ -68,6 +70,8 @@ header nav a {
   padding: 4px 10px;
   border-radius: 6px;
   transition: all 0.3s;
+  display: flex;
+  align-items: center; /* flèche et texte alignés */
 }
 
 header nav a:hover {
@@ -85,7 +89,7 @@ header nav .dropdown {
 header nav .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px); /* espace sous le lien */
   left: 0;
   min-width: 180px;
   background-color: #273070;
@@ -100,7 +104,6 @@ header nav .dropdown-content a {
   padding: 10px 15px;
   color: #f3f3f3;
   font-size: 1.1rem;
-  text-decoration: none;
 }
 
 header nav .dropdown-content a:hover {
@@ -177,10 +180,6 @@ header nav .dropdown.active > a::after {
   font-size: 1.5rem;
 }
 
-.hero-text h1 {
-  color: #273070;
-}
-
 /* ===========================
    SECTION À PROPOS
 =========================== */
@@ -233,8 +232,6 @@ footer a:hover {
    RESPONSIVE - MOBILE
 =========================== */
 @media (max-width: 768px) {
-
-  /* Menu mobile vertical */
   header nav {
     display: none;
     flex-direction: column;
@@ -259,14 +256,13 @@ footer a:hover {
     display: block;
   }
 
-  /* Dropdown mobile */
   header nav .dropdown-content {
-    display: none; /* caché par défaut */
+    display: none;
     flex-direction: column;
   }
 
   header nav .dropdown.active .dropdown-content {
-    display: flex; /* affiché si actif */
+    display: flex;
   }
 
   header nav a:hover,
@@ -274,7 +270,6 @@ footer a:hover {
     background-color: #444;
   }
 
-  /* TYPO MOBILE */
   .hero-overlay h1 { font-size: 2rem; }
   .hero-overlay p { font-size: 1.1rem; }
   .about-container h2 { font-size: 1.5rem; }
