@@ -21,10 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
       const dropdowns = headerContainer.querySelectorAll(".dropdown");
       dropdowns.forEach(drop => {
         const link = drop.querySelector("a");
+
         link.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) { // seulement sur mobile
-            e.preventDefault(); // bloque le # link
+            e.preventDefault(); // empêche la navigation
+
+            // bascule la classe active sur le dropdown
             drop.classList.toggle("active");
+          }
+        });
+      });
+
+      // --- Fermer les autres dropdowns quand on clique ailleurs ---
+      document.addEventListener("click", (e) => {
+        dropdowns.forEach(drop => {
+          const link = drop.querySelector("a");
+          if (!drop.contains(e.target) && drop.classList.contains("active") && window.innerWidth <= 768) {
+            drop.classList.remove("active");
           }
         });
       });
