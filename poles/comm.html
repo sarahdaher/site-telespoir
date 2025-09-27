@@ -6,6 +6,7 @@
   <title>Telespoir - Pôle Communication</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/poles.css">
+    <link rel="stylesheet" href="../css/gallery.css">
 </head>
 <body>
 
@@ -20,7 +21,6 @@
       <img src="../images/Mandat/Pôles/com.jpeg" alt="Pôle Communication">
     </div>
 
-    <!-- TEXTE + CAROUSEL À DROITE -->
     <div class="pole-text">
       <h2>Notre mission au pôle Communication</h2>
       <p>
@@ -30,8 +30,7 @@
       <h2>Nos affiches réalisées</h2>
 
       <!-- SCROLL DES AFFICHES -->
-      <div class="comm-carousel">
-        <div class="comm-carousel-inner">
+      <div class="gallery-scroll">
           <img src="../images/Affiches/1.jpeg" alt="Affiche 1">
           <img src="../images/Affiches/2.jpeg" alt="Affiche 2">
           <img src="../images/Affiches/3.jpeg" alt="Affiche 3">
@@ -40,8 +39,18 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <span class="close-lightbox">✕</span>
+    <img src="" alt="Image">
+    <div class="lightbox-controls">
+      <button class="lightbox-prev">◀</button>
+      <button class="lightbox-next">▶</button>
+    </div>
   </div>
-</section>
+
 
 </main>
 
@@ -49,5 +58,6 @@
   <div id="footer"></div>
 
   <script src="scripts/script-header-footer.js"></script>
+  <script src="scripts/script-gallery.js"></script>
 </body>
 </html>
