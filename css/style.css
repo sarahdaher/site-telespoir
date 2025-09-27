@@ -128,19 +128,17 @@ header nav .dropdown > a::after {
    HERO PLEIN ÉCRAN
 =========================== */
 .hero {
-  height: 100vh; /* plein écran */
+  height: 100vh;
   width: 100%;
   background-image: url('../images/Mandat/Groupe/2025.JPG');
-  background-size: contain; /* image entière visible */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 0;
-  padding: 0;
+  position: relative;
 }
 
 /* Overlay sombre pour lisibilité */
@@ -151,7 +149,7 @@ header nav .dropdown > a::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.4); /* semi-transparent */
+  background-color: rgba(0,0,0,0.5);
   z-index: 1;
 }
 
@@ -175,9 +173,8 @@ header nav .dropdown > a::after {
    SECTION À PROPOS
 =========================== */
 .about {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
-  background-color: #f9f9f9;
 }
 
 .about-container {
@@ -193,10 +190,8 @@ header nav .dropdown > a::after {
 
 .about-container p {
   font-size: 1.2rem;
-  color: #333;
   line-height: 1.6;
 }
-
 /* ===========================
    FOOTER
 =========================== */
@@ -273,5 +268,12 @@ footer a:hover {
 
   .hero-overlay p {
     font-size: 1.1rem;
+  }
+  .about-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-container p {
+    font-size: 1rem;
   }
 }
