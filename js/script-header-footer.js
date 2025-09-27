@@ -4,11 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch('header.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById('header').innerHTML = data;
+      const headerContainer = document.getElementById('header');
+      headerContainer.innerHTML = data;
 
       // --- Menu toggle mobile ---
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("header nav");
+      const menuToggle = headerContainer.querySelector(".menu-toggle");
+      const nav = headerContainer.querySelector("nav");
 
       if (menuToggle && nav) {
         menuToggle.addEventListener("click", () => {
@@ -17,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // --- Dropdown mobile pour "Pôles" ---
-      const dropdowns = document.querySelectorAll(".dropdown");
+      const dropdowns = headerContainer.querySelectorAll(".dropdown");
       dropdowns.forEach(drop => {
         const link = drop.querySelector("a");
         link.addEventListener("click", (e) => {
           if (window.innerWidth <= 768) { // seulement sur mobile
-            e.preventDefault();
+            e.preventDefault(); // bloque le # link
             drop.classList.toggle("active");
           }
         });

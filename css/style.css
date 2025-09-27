@@ -45,7 +45,9 @@ header .logo span {
   color: #fff;
 }
 
-/*partie pc*/
+/* ===========================
+   NAV - Desktop
+=========================== */
 header nav {
   display: flex;
   gap: 25px;
@@ -66,7 +68,7 @@ header nav a:hover {
   background-color: rgba(255,255,255,0.15);
 }
 
-/* Dropdown - pv*/
+/* Dropdown desktop */
 header nav .dropdown {
   position: relative;
 }
@@ -104,7 +106,9 @@ header nav .dropdown > a::after {
   font-size: 0.8rem;
 }
 
-/* sur telephone */
+/* ===========================
+   BOUTON MOBILE
+=========================== */
 .menu-toggle {
   display: none;
   background: none;
@@ -145,7 +149,6 @@ main {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-
 /* ===========================
    FOOTER
 =========================== */
@@ -171,9 +174,11 @@ footer a:hover {
   background-color: rgba(255,255,255,0.15);
 }
 
-/* RESPONSIVE - MOBILE */
+/* ===========================
+   RESPONSIVE - MOBILE
+=========================== */
 @media (max-width: 768px) {
-  /* Cacher le menu par défaut sur téléphone */
+  /* Cacher le menu par défaut */
   header nav {
     display: none;
     flex-direction: column;
@@ -184,17 +189,33 @@ footer a:hover {
   }
 
   header nav a {
-    padding: 12px 15px;
+    padding: 8px 12px; /* moins d’espace vertical */
     font-size: 1rem;
   }
 
-  /* Bouton visible seulement sur mobile */
+  /* Bouton mobile visible */
   .menu-toggle {
     display: block;
   }
 
-  /* Quand le menu est ouvert */
+  /* Menu ouvert */
   header nav.active {
     display: flex;
+  }
+
+  /* Dropdown mobile */
+  header nav .dropdown-content {
+    display: none;
+    flex-direction: column;
+  }
+
+  header nav .dropdown.active .dropdown-content {
+    display: flex;
+  }
+
+  /* Survol gris foncé comme le footer */
+  header nav a:hover,
+  header nav .dropdown.active .dropdown-content a:hover {
+    background-color: #444;
   }
 }
