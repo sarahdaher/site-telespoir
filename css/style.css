@@ -54,7 +54,7 @@ header .logo span {
 =========================== */
 header nav {
   display: flex;
-  align-items: center; /* tous les liens centrés verticalement */
+  align-items: center; 
   gap: 25px;
   flex-wrap: wrap;
   position: relative;
@@ -178,6 +178,10 @@ header nav .dropdown.active > a::after {
 
 .hero-overlay p {
   font-size: 1.5rem;
+}
+
+.hero-text h1{
+  color :#273070
 }
 
 /* ===========================
