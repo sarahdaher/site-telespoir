@@ -2,51 +2,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Injecter le header ---
   fetch('header.html')
-    .then(response => response.text())
+    .then(res => res.text())
     .then(data => {
-      const headerContainer = document.getElementById('header');
-      headerContainer.innerHTML = data;
+      const header = document.getElementById('header');
+      header.innerHTML = data;
 
-      // --- Menu toggle mobile ---
-      const menuToggle = headerContainer.querySelector(".menu-toggle");
-      const nav = headerContainer.querySelector("nav");
+      const nav = header.querySelector('nav');
+      const menuToggle = header.querySelector('.menu-toggle');
+      const dropdowns = header.querySelectorAll('.dropdown');
 
-      if (menuToggle && nav) {
-        menuToggle.addEventListener("click", () => {
-          nav.classList.toggle("active");
-        });
-      }
+      // Menu mobile toggle
+      menuToggle?.addEventListener('click', e => {
+        e.stopPropagation();
+        nav.classList.toggle('active');
+      });
 
-      // --- Dropdown mobile pour "Pôles" ---
-      const dropdowns = headerContainer.querySelectorAll(".dropdown");
+      // Dropdown toggle pour PC et mobile
       dropdowns.forEach(drop => {
-        const link = drop.querySelector("a");
+        const link = drop.querySelector('a');
 
-        link.addEventListener("click", (e) => {
-          if (window.innerWidth <= 768) { // seulement sur mobile
-            e.preventDefault(); // empêche la navigation
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          e.stopPropagation();
 
-            // bascule la classe active sur le dropdown
-            drop.classList.toggle("active");
+          const isActive = drop.classList.contains('active');
+
+          // Fermer tous les dropdowns
+          dropdowns.forEach(d => d.classList.remove('active'));
+
+          // Si ce n’était pas actif, on l’ouvre
+          if (!isActive) {
+            drop.classList.add('active');
           }
         });
       });
 
-      // --- Fermer les autres dropdowns quand on clique ailleurs ---
-      document.addEventListener("click", (e) => {
-        dropdowns.forEach(drop => {
-          const link = drop.querySelector("a");
-          if (!drop.contains(e.target) && drop.classList.contains("active") && window.innerWidth <= 768) {
-            drop.classList.remove("active");
-          }
-        });
+      // Clic en dehors ferme tout
+      document.addEventListener('click', () => {
+        dropdowns.forEach(d => d.classList.remove('active'));
+        if (window.innerWidth <= 768) {
+          nav.classList.remove('active');
+        }
       });
 
+      // Empêcher le clic dans nav de fermer immédiatement
+      nav.addEventListener('click', e => e.stopPropagation());
     });
 
   // --- Injecter le footer ---
   fetch('footer.html')
-    .then(response => response.text())
+    .then(res => res.text())
     .then(data => document.getElementById('footer').innerHTML = data);
 
 });

@@ -9,8 +9,6 @@
 
 html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -18,7 +16,7 @@ body {
   line-height: 1.6;
   background-color: #f9f9f9;
   color: #333;
-  text-align: center; /* tout centré par défaut */
+  text-align: center;
 }
 
 /* ===========================
@@ -58,6 +56,8 @@ header nav {
   display: flex;
   gap: 25px;
   flex-wrap: wrap;
+  position: relative; /* pour dropdown absolute */
+  z-index: 10;
 }
 
 header nav a {
@@ -74,7 +74,7 @@ header nav a:hover {
   background-color: rgba(255,255,255,0.15);
 }
 
-/* Dropdown Desktop */
+/* Dropdown */
 header nav .dropdown {
   position: relative;
 }
@@ -89,6 +89,7 @@ header nav .dropdown-content {
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   z-index: 1000;
+  flex-direction: column;
 }
 
 header nav .dropdown-content a {
@@ -103,13 +104,20 @@ header nav .dropdown-content a:hover {
   background-color: rgba(255,255,255,0.15);
 }
 
-header nav .dropdown:hover .dropdown-content {
-  display: block;
+/* Dropdown actif */
+header nav .dropdown.active .dropdown-content {
+  display: flex;
 }
 
+/* Flèche ▼ / ▲ */
 header nav .dropdown > a::after {
   content: " ▼";
   font-size: 0.8rem;
+  transition: transform 0.3s;
+}
+
+header nav .dropdown.active > a::after {
+  content: " ▲";
 }
 
 /* ===========================
@@ -125,7 +133,7 @@ header nav .dropdown > a::after {
 }
 
 /* ===========================
-   HERO PLEIN ÉCRAN
+   HERO
 =========================== */
 .hero {
   height: 100vh;
@@ -141,12 +149,10 @@ header nav .dropdown > a::after {
   text-align: center;
 }
 
-/* Overlay sombre */
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.5);
@@ -160,24 +166,9 @@ header nav .dropdown > a::after {
   padding: 20px;
 }
 
-.hero-overlay h1,
-.hero-overlay p {
-  margin: 0.5rem auto;
-  text-align: center;
-}
-
-.hero-overlay h1 {
-  font-size: 3rem;
-}
-
-.hero-overlay p {
-  font-size: 1.5rem;
-}
-
-.hero-text h1 {
-  color: #273070; /* bleu foncé comme le header */
-}
-
+.hero-overlay h1 { font-size: 3rem; }
+.hero-overlay p  { font-size: 1.5rem; }
+.hero-text h1 {color : #273070}
 /* ===========================
    SECTION À PROPOS
 =========================== */
@@ -188,11 +179,6 @@ header nav .dropdown > a::after {
 .about-container {
   max-width: 800px;
   margin: 0 auto;
-}
-
-.about-container h2,
-.about-container p {
-  text-align: center;
 }
 
 .about-container h2 {
@@ -236,7 +222,6 @@ footer a:hover {
 =========================== */
 @media (max-width: 768px) {
 
-  /* Menu principal vertical */
   header nav {
     display: none;
     flex-direction: column;
@@ -244,6 +229,10 @@ footer a:hover {
     background-color: #273070;
     margin-top: 5px;
     border-radius: 6px;
+  }
+
+  header nav.active {
+    display: flex;
   }
 
   header nav a,
@@ -256,17 +245,14 @@ footer a:hover {
     display: block;
   }
 
-  header nav.active {
-    display: flex;
-  }
-
-  header nav .dropdown .dropdown-content {
-    display: none; /* toujours caché par défaut */
+  /* Dropdown mobile */
+  header nav .dropdown-content {
+    display: none; /* caché par défaut */
     flex-direction: column;
   }
 
   header nav .dropdown.active .dropdown-content {
-    display: flex; /* affiché si .active */
+    display: flex; /* affiché si actif */
   }
 
   header nav a:hover,
@@ -274,19 +260,9 @@ footer a:hover {
     background-color: #444;
   }
 
-  .hero-overlay h1 {
-    font-size: 2rem;
-  }
-
-  .hero-overlay p {
-    font-size: 1.1rem;
-  }
-
-  .about-container h2 {
-    font-size: 1.5rem;
-  }
-
-  .about-container p {
-    font-size: 1rem;
-  }
+  /* TYPO MOBILE */
+  .hero-overlay h1 { font-size: 2rem; }
+  .hero-overlay p  { font-size: 1.1rem; }
+  .about-container h2 { font-size: 1.5rem; }
+  .about-container p  { font-size: 1rem; }
 }
