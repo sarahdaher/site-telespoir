@@ -7,6 +7,12 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   line-height: 1.6;
@@ -119,34 +125,76 @@ header nav .dropdown > a::after {
 }
 
 /* ===========================
-   HERO
+   HERO PLEIN ÉCRAN
 =========================== */
-main {
-  padding: 40px 20px;
+.hero {
+  height: 100vh; /* plein écran */
+  width: 100%;
+  background-image: url('../images/Mandat/Groupe/2025.JPG');
+  background-size: contain; /* image entière visible */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.hero-text h1 {
+/* Overlay sombre pour lisibilité */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4); /* semi-transparent */
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 20px;
+}
+
+.hero-overlay h1 {
   font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-overlay p {
+  font-size: 1.5rem;
+}
+
+/* ===========================
+   SECTION À PROPOS
+=========================== */
+.about {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-container h2 {
+  font-size: 2rem;
   color: #273070;
   margin-bottom: 1rem;
 }
 
-.hero-text p {
-  font-size: 1.5rem;
+.about-container p {
+  font-size: 1.2rem;
   color: #333;
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 1300px;
-  height: auto;
-  border-radius: 8px;
-  margin: 20px auto;
-  display: block;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  line-height: 1.6;
 }
 
 /* ===========================
@@ -189,34 +237,41 @@ footer a:hover {
     border-radius: 6px;
   }
 
-  /* Tous les liens du menu vertical (Accueil, Cagnottes...) */
+  /* Tous les liens du menu vertical */
   header nav a,
   header nav .dropdown-content a {
-    padding: 4px 10px; 
+    padding: 4px 10px;
     font-size: 0.95rem;
   }
 
-  /* Bouton mobile visible */
+  /* Bouton mobile */
   .menu-toggle {
     display: block;
   }
 
+  /* Menu ouvert */
   header nav.active {
     display: flex;
   }
 
-  /* Dropdown mobile */
-  header nav .dropdown-content {
-    display: none;
+  /* Dropdown actif */
+  header nav .dropdown.active .dropdown-content {
+    display: flex;
     flex-direction: column;
   }
 
-  header nav .dropdown.active .dropdown-content {
-    display: flex;
-  }
-
+  /* Survol gris foncé */
   header nav a:hover,
   header nav .dropdown.active .dropdown-content a:hover {
-    background-color: #f3f3f3;
+    background-color: #444;
+  }
+
+  /* Hero texte plus petit sur mobile */
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1.1rem;
   }
 }
