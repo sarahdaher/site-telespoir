@@ -1,0 +1,131 @@
+/* ===========================
+   CONTAINER PRINCIPAL
+=========================== */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: flex-start; 
+  justify-content: center;
+}
+
+/* ===========================
+   IMAGE DU BUREAU
+=========================== */
+.contact-image {
+  flex: 1 1 500px;  
+  max-width: 500px;
+  height: 500px;    
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  border-radius: 12px;
+}
+
+/* ===========================
+   TEXTE
+=========================== */
+.contact-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.contact-text h2 {
+  font-size: 2.4rem;
+  color: #273070;
+  margin-bottom: 20px;
+}
+
+.contact-text p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+/* Sections Emails / Réseaux sociaux */
+.section-title {
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #273070;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+/* Liens emails */
+.contact-text a {
+  color: #273070;
+  font-weight: bold;
+
+}
+
+.contact-text a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   RÉSEAUX SOCIAUX HORIZONTAUX
+=========================== */
+.socials {
+  display: flex;
+  flex-direction: row;       
+  margin-top: 20px;
+  justify-content: center;    
+  flex-wrap: wrap;          
+  gap: 23px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #273070;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #273070;           
+  text-decoration: underline; 
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-image {
+    max-width: 90%;
+    height: auto;   
+  }
+
+  .socials {
+    justify-content: center;
+  }
+}

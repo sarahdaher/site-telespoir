@@ -1,0 +1,62 @@
+/* ============================= */
+/* PÔLE INFORMATIQUE - INFO.CSS  */
+/* ============================= */
+
+/* CONTENEUR SPÉCIFIQUE AU PÔLE INFO */
+.pole-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* IMAGE PÔLE INFO */
+.pole-image-info {
+  flex: 0 0 30%;          /* image plus petite */
+  max-width: 300px;       /* limite stricte */
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.pole-image-info img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* TEXTE PÔLE INFO */
+.pole-text-info {
+  flex: 1 1 65%;          /* texte prend plus de place */
+  min-width: 250px;
+}
+
+.pole-text-info h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.pole-text-info p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .pole-info-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pole-image-info, .pole-text-info {
+    max-width: 90%;
+  }
+}

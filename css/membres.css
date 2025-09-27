@@ -1,0 +1,80 @@
+/* ===========================
+   MEMBERS CARDS
+=========================== */
+
+#members-container {
+  display: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+.member-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: calc(20% - 20px);
+  max-width: 270px;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 390px;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.member-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.member-card h3 {
+  font-size: 1.2rem;
+  color: #273070;
+  margin: 8px 0 4px 0;
+}
+
+.member-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1200px) {
+  .member-card {
+    width: calc(25% - 20px);
+  }
+}
+
+@media (max-width: 900px) {
+  .member-card {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .member-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 400px) {
+  .member-card {
+    width: 100%;
+  }
+}

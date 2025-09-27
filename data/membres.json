@@ -1,0 +1,20 @@
+[
+  { "prenom": "Héloïse", "nom": "Gouarné", "poles": ["Présidente", "Communication"], "photo": "images/Mandat/Individuel/helo.webp" },
+  { "prenom": "Mathilde", "nom": "Viellard", "poles": ["Vice-Présidente", "Maraudes"], "photo": "images/Mandat/Individuel/Mathilde.webp" },
+  { "prenom": "Adam", "nom": "Fayret-Hochart", "poles": ["Vice-Président Mission", "Maraudes"], "photo": "images/Mandat/Individuel/Adam.webp" },
+  { "prenom": "Maëlys", "nom": "Viegas", "poles": ["Trésorière", "Événements"], "photo": "images/Mandat/Individuel/Mae.webp" },
+  { "prenom": "Naoures", "nom": "Abbassi", "poles": ["Secrétaire Générale", "Épicerie"], "photo": "images/Mandat/Individuel/Naoures.webp" },
+  { "prenom": "Jules", "nom": "De Rolland-Alexandre", "poles": ["Mission", "Maraudes", "Événements"], "photo": "images/Mandat/Individuel/Jules.webp" },
+  { "prenom": "Lylia", "nom": "Mesa", "poles": ["Communication", "Relation Télécom et Entreprises"], "photo": "images/Mandat/Individuel/Lylia.webp" },
+  { "prenom": "Eya", "nom": "Mami", "poles": ["Événements"], "photo": "images/Mandat/Individuel/Eya.webp" },
+  { "prenom": "Étienne", "nom": "Pélissier", "poles": ["Maraudes", "Événements"], "photo": "images/Mandat/Individuel/etienne.webp" },
+  { "prenom": "Sarah", "nom": "Daher", "poles": ["Épicerie", "Informatique"], "photo": "images/Mandat/Individuel/Sarah.webp" },
+  { "prenom": "Charlotte", "nom": "Poupat", "poles": ["Maraudes", "Épicerie"], "photo": "images/Mandat/Individuel/Charlotte.webp" },
+  { "prenom": "Molka", "nom": "Ouichka", "poles": ["Épicerie"], "photo": "images/Mandat/Individuel/Molka.webp" },
+  { "prenom": "Adrien", "nom": "Bertrand", "poles": ["Informatique"], "photo": "images/Mandat/Individuel/Adrien.webp" },
+  { "prenom": "Yahya", "nom": "Moustahsane", "poles": ["Mission"], "photo": "images/Mandat/Individuel/Yahya.webp" },
+  { "prenom": "Khalil", "nom": "Jerbi", "poles": ["Relation Télécom et Entreprises"], "photo": "images/Mandat/Individuel/Khalil.webp" },
+  { "prenom": "Maxime", "nom": "Saffon", "poles": ["Maraudes"], "photo": "images/Mandat/Individuel/Maxime.webp" },
+  { "prenom": "Blaise", "nom": "Huber", "poles": ["Mission"], "photo": "images/Mandat/Individuel/Blaise.webp" },
+  { "prenom": "Timothée", "nom": "Février", "poles": ["Mission"], "photo": "images/Mandat/Individuel/Tim.webp" }
+]

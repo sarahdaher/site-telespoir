@@ -1,0 +1,200 @@
+/* ===========================
+   RESET & BODY
+=========================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: #273070;
+  color: white;
+  border-bottom: 1px solid #273070;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+header .logo img {
+  height: 70px;
+}
+
+header .logo span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/*partie pc*/
+header nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+header nav a {
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+header nav a:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+/* Dropdown - pv*/
+header nav .dropdown {
+  position: relative;
+}
+
+header nav .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: #273070;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+header nav .dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #f3f3f3;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+header nav .dropdown-content a:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+header nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+header nav .dropdown > a::after {
+  content: " ▼";
+  font-size: 0.8rem;
+}
+
+/* sur telephone */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===========================
+   HERO
+=========================== */
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #273070;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 1300px;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 15px 20px;
+  background-color: #273070;
+  color: white;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+}
+
+footer a {
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+footer a:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+  /* Cacher le menu par défaut sur téléphone */
+  header nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #273070;
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+
+  header nav a {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+
+  /* Bouton visible seulement sur mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Quand le menu est ouvert */
+  header nav.active {
+    display: flex;
+  }
+}

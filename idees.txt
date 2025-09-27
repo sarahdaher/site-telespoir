@@ -1,0 +1,7 @@
+### Idee d archi
+
+Idee de base : faire un fichier contenu par page incorpore dans le html mais ca a bug, je fais la methode facile en mettant tout par fichier sans diviser et je verrai apres si je reviens a la methode ou pas (
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="../js/script.js"></script>
+  )
+dcp mtn : que pages a manipuler et css
