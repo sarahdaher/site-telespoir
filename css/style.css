@@ -56,7 +56,7 @@ header nav {
   display: flex;
   gap: 25px;
   flex-wrap: wrap;
-  position: relative; /* pour dropdown absolute */
+  position: relative; /* important pour dropdown absolute */
   z-index: 10;
 }
 
@@ -74,9 +74,12 @@ header nav a:hover {
   background-color: rgba(255,255,255,0.15);
 }
 
-/* Dropdown */
+/* ===========================
+   DROPDOWN
+=========================== */
 header nav .dropdown {
   position: relative;
+  cursor: pointer;
 }
 
 header nav .dropdown-content {
@@ -166,9 +169,18 @@ header nav .dropdown.active > a::after {
   padding: 20px;
 }
 
-.hero-overlay h1 { font-size: 3rem; }
-.hero-overlay p  { font-size: 1.5rem; }
-.hero-text h1 {color : #273070}
+.hero-overlay h1 {
+  font-size: 3rem;
+}
+
+.hero-overlay p {
+  font-size: 1.5rem;
+}
+
+.hero-text h1 {
+  color: #273070;
+}
+
 /* ===========================
    SECTION À PROPOS
 =========================== */
@@ -222,6 +234,7 @@ footer a:hover {
 =========================== */
 @media (max-width: 768px) {
 
+  /* Menu mobile vertical */
   header nav {
     display: none;
     flex-direction: column;
@@ -229,6 +242,7 @@ footer a:hover {
     background-color: #273070;
     margin-top: 5px;
     border-radius: 6px;
+    overflow: visible;
   }
 
   header nav.active {
@@ -262,7 +276,7 @@ footer a:hover {
 
   /* TYPO MOBILE */
   .hero-overlay h1 { font-size: 2rem; }
-  .hero-overlay p  { font-size: 1.1rem; }
+  .hero-overlay p { font-size: 1.1rem; }
   .about-container h2 { font-size: 1.5rem; }
-  .about-container p  { font-size: 1rem; }
+  .about-container p { font-size: 1rem; }
 }

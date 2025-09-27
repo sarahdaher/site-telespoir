@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Header Pôles</title>
+  <style>
+    nav { display: flex; gap: 20px; background: #273070; padding: 10px; color: white; }
+    .dropdown { position: relative; cursor: pointer; }
+    .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: #273070; flex-direction: column; padding: 10px; }
+    .dropdown-content a { color: white; text-decoration: none; margin: 5px 0; }
+    .dropdown.active .dropdown-content { display: flex; }
+  </style>
+</head>
+<body>
+
+<!-- Conteneur pour header -->
+<div id="header"></div>
+
+<main>
+  <h1>Test Pôles</h1>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Injecter le header
+  fetch("../header.html") // "../" si tu es dans un sous-dossier
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Récupérer le nav injecté
+      const nav = document.querySelector("#header nav");
+
+      // Délégation d'événement pour Pôles
+      nav.addEventListener("click", e => {
+        const target = e.target.closest("a");
+        if (!target) return;
+
+        if (target.textContent.trim() === "Pôles") {
+          e.preventDefault();
+          const dropdown = target.parentElement;
+          dropdown.classList.toggle("active");
+          console.log("✅ Pôles cliqué, actif :", dropdown.classList.contains("active"));
+        }
+      });
+    })
+    .catch(err => console.error("Erreur fetch header:", err));
+});
+</script>
+
+</body>
+</html>
