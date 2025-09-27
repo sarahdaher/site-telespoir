@@ -278,4 +278,7 @@ footer a:hover {
   .hero-overlay p { font-size: 1.1rem; }
   .about-container h2 { font-size: 1.5rem; }
   .about-container p { font-size: 1rem; }
+  header nav .dropdown > a {font-size: 1rem;}
+  header nav .dropdown > a::after {font-size: 0.7rem; }
 }
+
