@@ -178,19 +178,22 @@ footer a:hover {
    RESPONSIVE - MOBILE
 =========================== */
 @media (max-width: 768px) {
-  /* Cacher le menu par défaut */
+
+  /* Menu principal vertical */
   header nav {
     display: none;
     flex-direction: column;
     width: 100%;
     background-color: #273070;
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 6px;
   }
 
-  header nav a {
-    padding: 8px 12px; /* moins d’espace vertical */
-    font-size: 1rem;
+  /* Tous les liens du menu vertical (Accueil, Cagnottes...) */
+  header nav a,
+  header nav .dropdown-content a {
+    padding: 4px 10px; 
+    font-size: 0.95rem;
   }
 
   /* Bouton mobile visible */
@@ -198,7 +201,6 @@ footer a:hover {
     display: block;
   }
 
-  /* Menu ouvert */
   header nav.active {
     display: flex;
   }
@@ -213,9 +215,8 @@ footer a:hover {
     display: flex;
   }
 
-  /* Survol gris foncé comme le footer */
   header nav a:hover,
   header nav .dropdown.active .dropdown-content a:hover {
-    background-color: #444;
+    background-color: #f3f3f3;
   }
 }
