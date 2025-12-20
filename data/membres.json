@@ -1,9 +1,9 @@
 [
   { "prenom": "Héloïse", "nom": "Gouarné", "poles": ["Présidente", "Communication"], "photo": "images/Mandat/Individuel/helo.webp" },
   { "prenom": "Mathilde", "nom": "Viellard", "poles": ["Vice-Présidente", "Maraudes"], "photo": "images/Mandat/Individuel/Mathilde.webp" },
-  { "prenom": "Adam", "nom": "Fayret-Hochart", "poles": ["Vice-Président Mission", "Maraudes"], "photo": "images/Mandat/Individuel/Adam.webp" },
+  { "prenom": "Adam", "nom": "Fayret-Hochart", "poles": ["Vice-Président Mission", "Maraudes", "Mission"], "photo": "images/Mandat/Individuel/Adam.webp" },
   { "prenom": "Maëlys", "nom": "Viegas", "poles": ["Trésorière", "Événements"], "photo": "images/Mandat/Individuel/Mae.webp" },
-  { "prenom": "Naoures", "nom": "Abbassi", "poles": ["Secrétaire Générale", "Épicerie"], "photo": "images/Mandat/Individuel/Naoures.webp" },
+  { "prenom": "Naoures", "nom": "Abassi", "poles": ["Secrétaire Générale", "Épicerie"], "photo": "images/Mandat/Individuel/Naoures.webp" },
   { "prenom": "Jules", "nom": "De Rolland-Alexandre", "poles": ["Mission", "Maraudes", "Événements"], "photo": "images/Mandat/Individuel/Jules.webp" },
   { "prenom": "Lylia", "nom": "Mesa", "poles": ["Communication", "Relation Télécom et Entreprises"], "photo": "images/Mandat/Individuel/Lylia.webp" },
   { "prenom": "Eya", "nom": "Mami", "poles": ["Événements"], "photo": "images/Mandat/Individuel/Eya.webp" },

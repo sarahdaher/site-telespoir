@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Télespoir - Actualité</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css?v=1.0.3">
   <link rel="stylesheet" href="css/contact.css">
-  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/blog.css?v=1.0.5">
 </head>
 <body>
 
@@ -17,47 +19,17 @@
 
     <h1 class="page-title">Notre actualité</h1>
 
-    <!-- EVENEMENT -->
-    <section class="event-card">
-      <!-- TITRE EN HAUT -->
-      <div class="event-title-bar">
-        <h2 class="event-title">Première maraude de l’année scolaire 2025/2026</h2>
-      </div>
-
-      <div class="event-body">
-        <!-- DATE A GAUCHE -->
-        <div class="event-date">
-          <span class="day">23</span>
-          <span class="month">Sep</span>
-          <span class="year">2025</span>
-        </div>
-
-        <!-- IMAGE A GAUCHE -->
-        <div class="event-image-wrapper">
-          <img src="images/events/maraude1.jpeg" alt="Première maraude 2025/2026 avec les bénévoles" class="event-image">
-        </div>
-
-        <!-- TEXTE A DROITE -->
-        <div class="event-content">
-          <p>
-            Le jeudi 23 septembre 2025, on a fait la première maraude de la nouvelle année scolaire! 
-            Grâce à la mobilisation d’un grand nombre de NainAs, nous avons pu organiser une distribution à plus grande échelle.  
-            Au total, près de <strong>25 personnes</strong> ont participé à la préparation, et plus de <strong>30 à la distribution</strong>.  
-            Répartis en six groupes, ils ont couvert plusieurs zones de Châtelet, Gare de l’Est, Gare du Nord, Gare de Lyon et Boulevard Saint Germain.  
-            Au total, nous avons pu distribuer près de <strong>100 repas</strong>, et encore plus de chips et de cafés!  
-          </p>
-          <p><em>Merci à tout ceux qui ont pu participer :) 🙏</em></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tu pourras ajouter d'autres events ici -->
+    <!-- Les événements seront générés ici automatiquement -->
+    <div id="events-list"></div>
 
   </main>
 
   <!-- FOOTER -->
   <div id="footer"></div>
 
+  <!-- SCRIPTS -->
   <script src="js/script-header-footer.js"></script>
+ <script src="js/events.js?v=1.0.1"></script>
+
 </body>
 </html>

@@ -1,8 +1,8 @@
 import os
 from PIL import Image
 
-INPUT_DIR = "images/Mandat/Individuel1/"
-OUTPUT_DIR = "images/Mandat/Individuel/"
+INPUT_DIR = "images/Mandat/Groupe1/"
+OUTPUT_DIR = "images/Mandat/Groupe/"
 
 # Création du dossier de sortie si inexistant
 os.makedirs(OUTPUT_DIR, exist_ok=True)

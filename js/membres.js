@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById('members-container');
 
-  fetch('data/membres.json')
+  fetch('data/membres.json?v=27112025')
     .then(response => response.json())
     .then(members => {
 
@@ -28,8 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
           container.appendChild(card);
         });
 
-        // Afficher le conteneur seulement maintenant
-        container.style.display = "flex"; // ou "grid" si tu utilises grid
+        container.style.display = "flex"; 
       });
 
     })
