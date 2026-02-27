@@ -1,7 +1,32 @@
-/* ===========================
-   MEMBERS CARDS
-=========================== */
+/*selector */
 
+.mandat-selector {
+  text-align: center;
+  margin: 40px 0 10px 0;
+}
+
+#mandat-select {
+  background-color: white;
+  border: 2px solid #273070;
+  color: #273070;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  min-width: 220px;
+}
+
+#mandat-select:hover {
+  background-color: #273070;
+  color: white;
+}
+
+#mandat-select:focus {
+  box-shadow: 0 0 0 3px rgba(39, 48, 112, 0.2);
+}
 #members-container {
   display: none;
   flex-wrap: wrap;
@@ -9,7 +34,7 @@
   justify-content: center;
   padding: 30px 20px;
 }
-
+/*card */
 .member-card {
   background-color: white;
   border-radius: 12px;
