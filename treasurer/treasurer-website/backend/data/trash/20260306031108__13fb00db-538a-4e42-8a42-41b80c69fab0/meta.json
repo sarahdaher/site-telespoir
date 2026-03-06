@@ -1,0 +1,12 @@
+{
+  "id": "13fb00db-538a-4e42-8a42-41b80c69fab0",
+  "created_at": "20260304015528",
+  "signature": {
+    "mime": "image/png",
+    "stored_name": "signature.png"
+  },
+  "invoice": {
+    "mime": "application/pdf",
+    "stored_name": "invoice.pdf"
+  }
+}

@@ -1,0 +1,31 @@
+plugins {
+    id "application"
+    id "java"
+    id "org.openjfx.javafxplugin" version "0.1.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = "supertreasurer.MainApp"
+}
+
+javafx {
+    version = "21.0.4"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing' ]
+}
+dependencies {
+    implementation "org.apache.pdfbox:pdfbox:2.0.30"
+    implementation 'org.apache.poi:poi-ooxml:5.2.5'
+    implementation 'org.apache.poi:poi:5.2.5'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
+}
+
