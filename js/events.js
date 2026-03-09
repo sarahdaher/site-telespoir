@@ -1,5 +1,16 @@
 const events = [
   {
+    title: "Stand de vente de seconde main",
+    day: "19",
+    month: "Feb",
+    year: "2026",
+    image: "images/events/marche-solidaire-telespoir.jpeg",
+    imageAlt: "Vente de seconde main",
+    content: `
+    Le jeudi 19 février, Télespoir a organisé un stand de vente de seconde main dans le hall de Télécom, avec la ressourcerie Réuniv’. Nous remercions l’administration pour leurs généreux dons, dont la vaste majorité ont étés vendus à prix réduit. Cette initiative vise a permettre l’installation des étudiants sur le plateau, notamment des élèves internationaux. Cet évenement deviendra une action récurrente de notre association.`,
+    footer: `<em>Merci à tous !</em>`,
+  },
+  {
     title: "Envoyez une lettre pour Noël",
     month: "Dec",
     year: "2025",
@@ -13,7 +24,7 @@ const events = [
       Si vous préférez écrire une lettre manuscrite, déposez-la en salle 2C54 🫶.<br>
       Pensez à indiquer Télespoir comme référent du projet !
     `,
-    footer: `<em>Merci pour votre générosité !</em>`
+    footer: `<em>Merci pour votre générosité !</em>`,
   },
   {
     title: "Bingo",
@@ -29,7 +40,7 @@ const events = [
       Au total, 394 grilles ont été vendues et une soixantaine de lots étaient à gagner. 
       Un grand merci à Telecroisiere, Teleplouf, BDI, TeleBreizh, Snoox, Fanfare, Telecapote, Ludo, BDS, Groupe Ultras, Gala, Bar, Thé-Lait-Café, Les Plaisirs de la Table, MAD, Snax, TSM, Fraise Framboise, La Scène, Telecom Etude, FUPS, TBF, Telecom Racing, Comete, Salon du Terroir, KFT et Forum pour leurs dons.
     `,
-    footer: `<em>Félicitations à tous les gagnants !</em>`
+    footer: `<em>Félicitations à tous les gagnants !</em>`,
   },
   {
     title: "Deuxième maraude de l’année scolaire 2025/2026",
@@ -46,7 +57,7 @@ const events = [
       Au total, près de <strong>35 personnes</strong> ont participé à la préparation et à la distribution.
       Nous avons pu remettre près de <strong>100 repas</strong> aux personnes dans le besoin.
     `,
-    footer: `<em>Merci à tous ceux qui ont pu participer :) 🙏</em>`
+    footer: `<em>Merci à tous ceux qui ont pu participer :) 🙏</em>`,
   },
   {
     title: "Friperie de Télespoir",
@@ -55,7 +66,7 @@ const events = [
     year: "2025",
     content: `
       À l'occasion de l'événement bien-être de Télécom Paris, Télespoir a tendu un stand friperie dans le hall de Télécom Paris pour vendre quelques goodies et vétements aux étudiants présents.`,
-    footer: "Merci à tous"
+    footer: "Merci à tous",
   },
   {
     title: "Première maraude de l’année scolaire 2025/2026",
@@ -71,15 +82,16 @@ const events = [
       Répartis en six groupes, ils ont couvert plusieurs zones de Châtelet, Gare de l’Est, Gare du Nord, Gare de Lyon et Boulevard Saint Germain.
       Au total, nous avons pu distribuer près de <strong>100 repas</strong>.
     `,
-    footer: `<em>Merci à tous ceux qui ont pu participer :) 🙏</em>`
-  }
+    footer: `<em>Merci à tous ceux qui ont pu participer :) 🙏</em>`,
+  },
 ];
-
 
 function renderEvents() {
   const container = document.getElementById("events-list");
 
-  container.innerHTML = events.map(event => `
+  container.innerHTML = events
+    .map(
+      (event) => `
     <section class="event-card">
 
       <div class="event-title-bar">
@@ -94,10 +106,14 @@ function renderEvents() {
           ${event.year ? `<span class="year">${event.year}</span>` : ""}
         </div>
 
-        ${event.image ? `
+        ${
+          event.image
+            ? `
         <div class="event-image-wrapper">
           <img src="${event.image}" alt="${event.imageAlt || ""}" class="event-image">
-        </div>` : ""}
+        </div>`
+            : ""
+        }
 
         <div class="event-content">
           ${event.content ? `<p>${event.content}</p>` : ""}
@@ -106,9 +122,10 @@ function renderEvents() {
 
       </div>
     </section>
-  `).join("");
+  `,
+    )
+    .join("");
 }
-
 
 // Exécute l’affichage quand la page est chargée
 document.addEventListener("DOMContentLoaded", renderEvents);
