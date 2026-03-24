@@ -1,0 +1,224 @@
+/* ===========================
+   EVENTS - PAGE ÉVÉNEMENTS
+=========================== */
+
+.events-section {
+  padding: 50px 20px;
+  background-color: transparent;
+}
+
+.events-section h1 {
+  font-size: 2.2rem;
+  color: #273070;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#events-list {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* --- Card événement --- */
+.event-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* --- Barre titre --- */
+.event-title-bar {
+  background-color: #273070;
+  padding: 14px 24px;
+}
+
+.event-title {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+/* ===========================
+   CORPS : DATE | GALERIE | TEXTE
+=========================== */
+.event-body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* --- Colonne date (bord gauche) --- */
+.event-date {
+  flex: 0 0 70px;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 8px;
+  align-self: stretch;
+  border-right: 2px solid #f0f0f0;
+  text-align: center;
+}
+
+.event-date .day {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.event-date .month {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.event-date .year {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #a5a5a5;
+  margin-top: 2px;
+}
+
+/* --- Zone droite (galerie + texte) --- */
+.event-main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ===========================
+   GALERIE PHOTOS - SCROLL VERTICAL
+=========================== */
+.event-gallery {
+  flex: 0 0 340px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-gallery-track {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 320px;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  border-radius: 10px;
+}
+
+.event-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.event-gallery-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.event-gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.event-gallery-item .event-image {
+  width: 340px;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-hint {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #aaa;
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+
+/* --- Texte contenu --- */
+.event-content {
+  flex: 1;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.event-content p + p {
+  margin-top: 10px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .events-section h1 {
+    font-size: 1.7rem;
+  }
+
+  .event-title {
+    font-size: 1.2rem;
+  }
+
+  /* Sur mobile : tout en colonne */
+  .event-body {
+    flex-direction: column;
+  }
+
+  .event-date {
+    flex-direction: row;
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 12px 20px;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .event-date .day {
+    font-size: 1.6rem;
+  }
+
+  .event-main {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .event-gallery {
+    flex: none;
+    width: 100%;
+  }
+
+  .event-gallery-track {
+    flex-direction: row;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+  }
+
+  .event-gallery-item .event-image {
+    width: 75vw;
+    height: 240px;
+  }
+}
