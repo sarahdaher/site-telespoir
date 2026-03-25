@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url('../images/Design-background.svg') no-repeat center center fixed;
+  background: url("../images/Design-background.svg") no-repeat center center
+    fixed;
   background-size: cover;
 }
 
@@ -42,7 +43,7 @@ body {
   flex-direction: column;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   margin-bottom: 50px;
 }
@@ -68,9 +69,17 @@ body {
   letter-spacing: 1px;
 }
 
-.event-date .day { font-size: 1.8rem; }
-.event-date .month { text-transform: uppercase; font-size: 0.85rem; }
-.event-date .year { font-size: 0.8rem; opacity: 0.8; }
+.event-date .day {
+  font-size: 1.8rem;
+}
+.event-date .month {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+.event-date .year {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
 
 /* IMAGE */
 .event-image-wrapper {

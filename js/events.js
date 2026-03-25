@@ -6,7 +6,11 @@ const events = [
     year: "2026",
     images: [
       {
-        src: "images/events/marche-solidaire-telespoir.jpeg",
+        src: "images/events/marche-solidaire-telespoir3.JPG",
+        alt: "Vente de seconde main",
+      },
+      {
+        src: "images/events/marche-solidaire-telespoir2.JPG",
         alt: "Vente de seconde main",
       },
       {
