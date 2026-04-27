@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Télespoir - Cagnotte Solidaire</title>
+    <link rel="stylesheet" href="css/style.css?v=1.0.3" />
+    <link rel="stylesheet" href="css/cagnotte.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main class="cagnotte-main">
+      <!-- HERO -->
+      <section class="cagnotte-hero">
+        <h1>Course & Cagnotte Solidaire 🏃</h1>
+        <p>Ensemble, relevons des défis pour la mission !</p>
+      </section>
+
+      <!-- CAGNOTTE GLOBALE -->
+      <section class="cagnotte-globale">
+        <div class="cagnotte-card">
+          <div class="cagnotte-montant">
+            <span class="montant-label">Cagnotte totale</span>
+            <span class="montant-valeur" id="montant-total">0 €</span>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-labels" id="progress-labels"></div>
+            <div class="progress-bar-outer">
+              <div class="progress-bar-inner" id="progress-bar"></div>
+            </div>
+            <div class="progress-objectif" id="progress-objectif"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEFIS GLOBAUX -->
+      <section class="defis-section">
+        <h2>Défis à débloquer 🎯</h2>
+        <div class="defis-grid" id="defis-globaux"></div>
+      </section>
+
+      <!-- FAMILLES -->
+      <section class="familles-section">
+        <h2>Familles de parrainage</h2>
+        <div class="familles-grid" id="familles-grid"></div>
+      </section>
+
+      <!-- CLASSEMENT COURSE -->
+      <section class="course-section">
+        <h2>Classement de la cagnotte</h2>
+        <div class="classement-wrap" id="classement"></div>
+      </section>
+    </main>
+    <div id="footer"></div>
+    <script src="js/script-header-footer.js"></script>
+    <script src="js/cagnotte.js"></script>
+  </body>
+</html>

@@ -1,0 +1,418 @@
+/* ===========================
+   CAGNOTTE SOLIDAIRE
+=========================== */
+
+.cagnotte-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* --- HERO --- */
+.cagnotte-hero {
+  text-align: center;
+  padding: 50px 20px 30px;
+}
+
+.cagnotte-hero h1 {
+  font-size: 2.6rem;
+  color: #273070;
+  margin-bottom: 10px;
+}
+
+.cagnotte-hero p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* --- CAGNOTTE GLOBALE --- */
+.cagnotte-globale {
+  margin-bottom: 50px;
+}
+
+.cagnotte-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 36px 40px;
+}
+
+.cagnotte-montant {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.montant-label {
+  font-size: 1.1rem;
+  color: #777;
+  font-weight: 500;
+}
+
+.montant-valeur {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #273070;
+  line-height: 1;
+}
+
+/* Barre de progression */
+.progress-wrap {
+  position: relative;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.progress-label {
+  font-size: 0.75rem;
+  color: #aaa;
+  text-align: center;
+  flex: 1;
+}
+
+.progress-label.atteint {
+  color: #273070;
+  font-weight: 700;
+}
+
+.progress-bar-outer {
+  width: 100%;
+  height: 22px;
+  background: #eef0f7;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #273070, #4a5bc9);
+  border-radius: 999px;
+  transition: width 1s ease;
+  min-width: 4px;
+}
+
+/* Marqueurs de paliers */
+.palier-marker {
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+}
+
+.progress-objectif {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 6px;
+}
+
+/* --- SECTION DEFIS --- */
+.defis-section {
+  margin-bottom: 50px;
+}
+
+.defis-section h2,
+.familles-section h2,
+.course-section h2 {
+  font-size: 1.8rem;
+  color: #273070;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.defis-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.defi-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px;
+  width: calc(33.33% - 16px);
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 5px solid #ddd;
+  transition: transform 0.2s;
+  position: relative;
+  opacity: 0.6;
+}
+
+.defi-card.debloque {
+  border-left-color: #273070;
+  opacity: 1;
+  background: linear-gradient(135deg, #fff 80%, #eef0f7);
+}
+
+.defi-card.debloque::after {
+  content: "Débloqué !";
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #273070;
+}
+
+.defi-card:hover {
+  transform: translateY(-3px);
+}
+
+.defi-palier {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.defi-card.debloque .defi-palier {
+  color: #273070;
+}
+
+.defi-texte {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.defi-lock {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+/* --- SECTION FAMILLES --- */
+.familles-section {
+  margin-bottom: 50px;
+}
+
+.familles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.famille-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.09);
+  padding: 22px;
+  width: calc(50% - 20px);
+  min-width: 280px;
+  max-width: 480px;
+  border-top: 5px solid #ddd;
+}
+
+.famille-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.famille-nom {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #273070;
+}
+
+.famille-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.famille-stat {
+  text-align: center;
+}
+
+.stat-valeur {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #273070;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.famille-defis {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.famille-defi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #f5f6fb;
+  opacity: 0.55;
+}
+
+.famille-defi.debloque {
+  background: #eef0f7;
+  opacity: 1;
+  color: #273070;
+  font-weight: 600;
+}
+
+.famille-defi-icon {
+  font-size: 1rem;
+}
+
+.famille-progress {
+  margin-top: 10px;
+  height: 8px;
+  background: #eef0f7;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.famille-progress-inner {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1s ease;
+  min-width: 3px;
+}
+
+/* --- CLASSEMENT COURSE --- */
+.course-section {
+  margin-bottom: 30px;
+}
+
+.classement-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.classement-ligne {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  padding: 14px 20px;
+  transition: transform 0.2s;
+}
+
+.classement-ligne:hover {
+  transform: translateX(4px);
+}
+
+.classement-rang {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #273070;
+  width: 36px;
+  text-align: center;
+}
+
+.classement-rang.or {
+  color: #f1c40f;
+}
+.classement-rang.argent {
+  color: #95a5a6;
+}
+.classement-rang.bronze {
+  color: #e67e22;
+}
+
+.classement-couleur {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.classement-nom {
+  flex: 1;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.classement-dons {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #273070;
+  min-width: 70px;
+  text-align: right;
+}
+
+.classement-km {
+  font-size: 0.9rem;
+  color: #888;
+  min-width: 70px;
+  text-align: right;
+}
+
+.classement-bar-wrap {
+  flex: 2;
+  height: 10px;
+  background: #eef0f7;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.classement-bar {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1s ease;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .cagnotte-hero h1 {
+    font-size: 1.9rem;
+  }
+  .montant-valeur {
+    font-size: 2.2rem;
+  }
+  .cagnotte-card {
+    padding: 24px 20px;
+  }
+  .defi-card {
+    width: calc(50% - 16px);
+  }
+  .famille-card {
+    width: 100%;
+  }
+  .classement-bar-wrap {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .defi-card {
+    width: 100%;
+  }
+}

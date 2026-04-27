@@ -1,0 +1,234 @@
+/* ===========================
+   ADMIN CAGNOTTE
+=========================== */
+
+.admin-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+/* --- LOGIN --- */
+#login-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  padding: 48px 40px;
+  text-align: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-card h1 {
+  font-size: 1.8rem;
+  color: #273070;
+  margin-bottom: 8px;
+}
+
+.login-card p {
+  color: #888;
+  margin-bottom: 28px;
+  font-size: 0.95rem;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.login-card input:focus {
+  border-color: #273070;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  background: #273070;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-card button:hover {
+  background: #1a2050;
+}
+
+.login-error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+/* --- PANEL --- */
+#admin-panel h1 {
+  font-size: 2rem;
+  color: #273070;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.admin-subtitle {
+  text-align: center;
+  color: #888;
+  margin-bottom: 40px;
+}
+
+.admin-section {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+
+.admin-section h2 {
+  font-size: 1.2rem;
+  color: #273070;
+  margin-bottom: 18px;
+}
+
+/* Stats */
+.admin-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.admin-stat-block {
+  background: #f5f6fb;
+  border-radius: 10px;
+  padding: 16px 22px;
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.admin-stat-val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #273070;
+  display: block;
+}
+
+.admin-stat-label {
+  font-size: 0.8rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Formulaire */
+.admin-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.admin-form select,
+.admin-form input {
+  flex: 1;
+  min-width: 160px;
+  padding: 10px 14px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.admin-form select:focus,
+.admin-form input:focus {
+  border-color: #273070;
+}
+
+.btn-action {
+  padding: 10px 22px;
+  background: #273070;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-action:hover {
+  background: #1a2050;
+}
+
+/* Log */
+.admin-log {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-log li {
+  background: #f5f6fb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: #444;
+  border-left: 4px solid #273070;
+}
+
+.log-empty {
+  color: #aaa !important;
+  border-left-color: #ddd !important;
+  font-style: italic;
+}
+
+/* Export */
+.btn-export {
+  padding: 14px 32px;
+  background: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+.btn-export:hover {
+  background: #27ae60;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .admin-form {
+    flex-direction: column;
+  }
+  .admin-form select,
+  .admin-form input,
+  .btn-action {
+    width: 100%;
+  }
+}

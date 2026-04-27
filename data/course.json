@@ -1,0 +1,213 @@
+{
+  "taux_km_euro": 1,
+  "dons_directs": 10,
+  "paliers_globaux": [
+    {
+      "montant": 200,
+      "defi": "Exemple défi 1 — à remplir",
+      "debloque": false
+    },
+    {
+      "montant": 400,
+      "defi": "Exemple défi 2 — à remplir",
+      "debloque": false
+    },
+    {
+      "montant": 600,
+      "defi": "Exemple défi 3 — à remplir",
+      "debloque": false
+    },
+    {
+      "montant": 800,
+      "defi": "Exemple défi 4 — à remplir",
+      "debloque": false
+    },
+    {
+      "montant": 1000,
+      "defi": "Exemple défi 5 — à remplir",
+      "debloque": false
+    }
+  ],
+  "familles": [
+    {
+      "nom": "Tanas du Terroir",
+      "couleur": "#DE3163",
+      "km": 10,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Alpha — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Alpha 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    },
+    {
+      "nom": "Ronflex",
+      "couleur": "#4a6741",
+      "km": 0,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Beta — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Beta 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    },
+    {
+      "nom": "Panthères Roses",
+      "couleur": "#F8C8DC",
+      "km": 0,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Gamma — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Gamma 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    },
+    {
+      "nom": "Famille Delta",
+      "couleur": "#2ecc71",
+      "km": 0,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Delta — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Delta 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    },
+    {
+      "nom": "Famille Epsilon",
+      "couleur": "#1abc9c",
+      "km": 0,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Epsilon — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Epsilon 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    },
+    {
+      "nom": "Famille Zeta",
+      "couleur": "#3498db",
+      "km": 0,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Zeta — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Zeta 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    },
+    {
+      "nom": "Famille Eta",
+      "couleur": "#9b59b6",
+      "km": 0,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Eta — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Eta 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    },
+    {
+      "nom": "Famille Theta",
+      "couleur": "#e91e63",
+      "km": 0,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Theta — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Theta 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    },
+    {
+      "nom": "Famille Iota",
+      "couleur": "#00bcd4",
+      "km": 0,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Iota — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Iota 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    },
+    {
+      "nom": "Famille Kappa",
+      "couleur": "#ff5722",
+      "km": 0,
+      "dons": 0,
+      "paliers": [
+        {
+          "montant": 50,
+          "defi": "Défi famille Kappa — à remplir",
+          "debloque": false
+        },
+        {
+          "montant": 100,
+          "defi": "Défi famille Kappa 2 — à remplir",
+          "debloque": false
+        }
+      ]
+    }
+  ]
+}

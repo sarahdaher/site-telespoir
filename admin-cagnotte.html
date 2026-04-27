@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Télespoir - Admin Cagnotte</title>
+    <link rel="stylesheet" href="css/style.css?v=1.0.3" />
+    <link rel="stylesheet" href="css/admin-cagnotte.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <main class="admin-main">
+      <!-- LOGIN -->
+      <div id="login-screen">
+        <div class="login-card">
+          <h1>Accès Admin 🔐</h1>
+          <p>Réservé au pôle info Télespoir</p>
+          <input type="password" id="mdp-input" placeholder="Mot de passe" />
+          <button id="login-btn">Connexion</button>
+          <p class="login-error" id="login-error"></p>
+        </div>
+      </div>
+
+      <!-- PANEL ADMIN -->
+      <div id="admin-panel" style="display: none">
+        <h1>Panel Admin — Cagnotte Solidaire</h1>
+        <p class="admin-subtitle">
+          Mettez à jour les données en téléchargeant le JSON modifié.
+        </p>
+
+        <!-- ETAT ACTUEL -->
+        <section class="admin-section">
+          <h2>État actuel</h2>
+          <div class="admin-stats" id="admin-stats"></div>
+        </section>
+
+        <!-- AJOUTER KM -->
+        <section class="admin-section">
+          <h2>Ajouter des kilomètres</h2>
+          <div class="admin-form">
+            <select id="km-famille"></select>
+            <input
+              type="number"
+              id="km-valeur"
+              placeholder="Kilomètres à ajouter"
+              min="0"
+              step="0.1"
+            />
+            <button class="btn-action" id="btn-km">Ajouter</button>
+          </div>
+        </section>
+
+        <!-- AJOUTER DON -->
+        <section class="admin-section">
+          <h2>Enregistrer un don</h2>
+          <div class="admin-form">
+            <select id="don-cible">
+              <option value="__global__">Don général (cagnotte globale)</option>
+            </select>
+            <input
+              type="number"
+              id="don-valeur"
+              placeholder="Montant en €"
+              min="0"
+              step="1"
+            />
+            <button class="btn-action" id="btn-don">Enregistrer</button>
+          </div>
+        </section>
+
+        <!-- LOG -->
+        <section class="admin-section">
+          <h2>Modifications en cours</h2>
+          <ul class="admin-log" id="admin-log">
+            <li class="log-empty">Aucune modification pour l'instant.</li>
+          </ul>
+        </section>
+
+        <!-- EXPORT -->
+        <section class="admin-section">
+          <h2>Exporter le JSON mis à jour</h2>
+          <p style="color: #777; font-size: 0.95rem">
+            Téléchargez le fichier et remplacez
+            <code>data/course.json</code> sur le serveur.
+          </p>
+          <button class="btn-export" id="btn-export">
+            Télécharger course.json
+          </button>
+        </section>
+      </div>
+    </main>
+    <div id="footer"></div>
+    <script src="js/script-header-footer.js"></script>
+    <script src="js/admin-cagnotte.js"></script>
+  </body>
+</html>
