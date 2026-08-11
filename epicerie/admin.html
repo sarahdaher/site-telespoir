@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin • Épicerie Télespoir</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #273070; --blue-light: #3a47a3; --blue-pale: #eef0f9;
+  --red: #c0392b; --green: #1a8a5a; --text: #1a1a2e; --muted: #8888aa;
+  --white: #ffffff; --radius: 12px; --shadow: 0 4px 20px rgba(39,48,112,0.10);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: #f3f4f9; color: var(--text); min-height: 100vh; padding-bottom: 60px; }
+header { background: var(--blue); color: white; text-align: center; padding: 32px 20px 28px; }
+header h1 { font-family: 'DM Serif Display', serif; font-size: 2rem; margin-bottom: 4px; }
+header p { font-size: 0.9rem; opacity: 0.7; font-weight: 300; }
+.page { max-width: 680px; margin: 0 auto; padding: 28px 16px 0; display: flex; flex-direction: column; gap: 20px; }
+.card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
+.card-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--blue); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+input[type="text"] { width: 100%; padding: 11px 14px; border: 1.5px solid #dde0ef; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--text); transition: border 0.2s; background: #fafbff; }
+input:focus { outline: none; border-color: var(--blue); background: white; }
+input:disabled { background: #f5f5f5; color: #aaa; cursor: not-allowed; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 18px; border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.18s; }
+.btn-primary { background: var(--blue); color: white; }
+.btn-primary:hover { background: var(--blue-light); }
+.btn-danger { background: var(--red); color: white; }
+.btn-danger:hover { background: #a93226; }
+.btn-green { background: var(--green); color: white; }
+.btn-green:hover { background: #156b48; }
+.btn:disabled { background: #ccc; cursor: not-allowed; color: white; }
+.btn-full { width: 100%; }
+.stats-row { display: flex; gap: 12px; margin-bottom: 20px; }
+.stat-box { flex: 1; background: var(--blue-pale); border-radius: 8px; padding: 12px; text-align: center; }
+.stat-num { font-size: 1.6rem; font-weight: 700; color: var(--blue); line-height: 1; }
+.stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
+.divider { border: none; border-top: 1px solid #eee; margin: 18px 0; }
+.section-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 10px; }
+.cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.cal-nav { background: none; border: 1.5px solid #dde0ef; border-radius: 6px; width: 32px; height: 32px; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--blue); transition: background 0.15s; }
+.cal-nav:hover { background: var(--blue-pale); }
+.cal-month-label { font-weight: 600; font-size: 0.95rem; color: var(--blue); text-transform: capitalize; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 14px; }
+.cal-day-name { text-align: center; font-size: 0.7rem; font-weight: 600; color: var(--muted); padding: 2px 0 6px; text-transform: uppercase; }
+.cal-day { text-align: center; padding: 7px 4px; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: background 0.15s; color: var(--text); border: 1.5px solid transparent; }
+.cal-day:hover:not(.empty):not(.past) { background: var(--blue-pale); }
+.cal-day.selected { background: var(--blue); color: white; border-color: var(--blue); }
+.cal-day.today { border-color: var(--blue); font-weight: 600; }
+.cal-day.past { color: #ccc; cursor: default; }
+.cal-day.empty { cursor: default; }
+.time-input-row { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
+.time-input-row input { flex: 1; }
+.time-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; min-height: 10px; }
+.time-tag { display: flex; align-items: center; gap: 5px; background: var(--blue-pale); color: var(--blue); border-radius: 20px; padding: 4px 10px 4px 12px; font-size: 0.82rem; font-weight: 500; }
+.time-tag button { background: none; border: none; cursor: pointer; color: var(--blue); font-size: 1rem; line-height: 1; padding: 0; opacity: 0.6; }
+.time-tag button:hover { opacity: 1; }
+.recap-list { display: flex; flex-direction: column; gap: 8px; }
+.recap-item { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; border-radius: 8px; background: #fafbff; border: 1.5px solid #eee; font-size: 0.9rem; gap: 8px; }
+.recap-item.reserved { border-color: #ffd0cc; background: #fff8f7; }
+.recap-item-info { flex: 1; min-width: 0; }
+.recap-slot-name { font-weight: 600; color: var(--blue); }
+.recap-person { font-size: 0.8rem; color: var(--muted); margin-top: 1px; }
+.btn-delete-slot { padding: 5px 11px; font-size: 0.8rem; border-radius: 6px; background: none; border: 1.5px solid #e0e0e0; color: var(--red); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.15s; white-space: nowrap; }
+.btn-delete-slot:hover { background: #ffe0de; border-color: var(--red); }
+.empty-state { text-align: center; color: var(--muted); padding: 24px 0; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>⚙️ Admin Épicerie</h1>
+  <p>Gestion des créneaux</p>
+</header>
+<div class="page">
+  <div class="card">
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-num" id="stat-total">—</div><div class="stat-label">créneaux</div></div>
+      <div class="stat-box"><div class="stat-num" id="stat-taken">—</div><div class="stat-label">réservés</div></div>
+      <div class="stat-box"><div class="stat-num" id="stat-free">—</div><div class="stat-label">disponibles</div></div>
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Ajouter des créneaux</div>
+
+    <div class="cal-header">
+      <button class="cal-nav" id="cal-prev">‹</button>
+      <span class="cal-month-label" id="cal-month-label"></span>
+      <button class="cal-nav" id="cal-next">›</button>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+
+    <div id="selected-date-label" style="font-size:0.85rem;color:var(--muted);margin-bottom:10px;">
+      Sélectionnez une date ci-dessus
+    </div>
+
+    <div class="time-input-row">
+      <input type="text" id="time-input" placeholder="Ex : 10h, 14h30… puis Entrée" disabled>
+      <button class="btn btn-primary" id="add-time-btn" disabled>+ Ajouter</button>
+    </div>
+    <div class="time-tags" id="time-tags"></div>
+    <button class="btn btn-green btn-full" id="addCalSlots" disabled>Enregistrer les créneaux</button>
+
+    <hr class="divider">
+    <div class="section-label">Récapitulatif</div>
+    <div class="recap-list" id="recap-list"><div class="empty-state">Aucun créneau.</div></div>
+
+    <hr class="divider">
+    <button class="btn btn-danger btn-full" id="resetBtn">🗑️ Réinitialiser TOUS les créneaux</button>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDKpM_xwciFWOjHb18bONOO2N5c4jliQTM",
+  authDomain: "creneaux-26.firebaseapp.com",
+  databaseURL: "https://creneaux26-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "creneaux-26",
+  storageBucket: "creneaux-26.appspot.com",
+  messagingSenderId: "925270932823",
+  appId: "1:925270932823:web:1b0c438422145e3c30d212"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+let slotsData = {};
+
+function loadSlots() {
+  db.ref('slots').on('value', snap => {
+    slotsData = snap.val() || {};
+    renderRecap();
+    updateStats();
+  });
+}
+
+function updateStats() {
+  const total = Object.keys(slotsData).length;
+  const taken = Object.values(slotsData).filter(v => v !== false && v !== null).length;
+  document.getElementById("stat-total").textContent = total;
+  document.getElementById("stat-taken").textContent = taken;
+  document.getElementById("stat-free").textContent = total - taken;
+}
+
+function renderRecap() {
+  const list = document.getElementById("recap-list");
+  const keys = Object.keys(slotsData).sort();
+  if (!keys.length) { list.innerHTML = '<div class="empty-state">Aucun créneau.</div>'; return; }
+  list.innerHTML = "";
+  keys.forEach(slot => {
+    const val = slotsData[slot];
+    const taken = val !== false && val !== null;
+    const item = document.createElement("div");
+    item.className = "recap-item" + (taken ? " reserved" : "");
+    const info = document.createElement("div");
+    info.className = "recap-item-info";
+    info.innerHTML = `<div class="recap-slot-name">${slot}</div>`;
+    if (taken && typeof val === 'object') {
+      info.innerHTML += `<div class="recap-person">👤 ${val.prenom} ${val.nom} — ${val.email}</div>`;
+    } else {
+      info.innerHTML += `<div class="recap-person" style="color:var(--green)">✓ Disponible</div>`;
+    }
+    const del = document.createElement("button");
+    del.className = "btn-delete-slot";
+    del.textContent = "Supprimer";
+    del.onclick = () => { if (confirm(`Supprimer "${slot}" ?`)) db.ref('slots/' + slot).remove(); };
+    item.appendChild(info);
+    item.appendChild(del);
+    list.appendChild(item);
+  });
+}
+
+document.getElementById("resetBtn").onclick = () => {
+  if (confirm("Supprimer TOUS les créneaux ?")) db.ref('slots').set(null);
+};
+
+// CALENDRIER
+const DAYS = ["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];
+const MONTHS = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+let calDate = new Date(), selectedDate = null, pendingTimes = [];
+
+function renderCalendar() {
+  const grid = document.getElementById("cal-grid");
+  const year = calDate.getFullYear(), month = calDate.getMonth();
+  document.getElementById("cal-month-label").textContent = MONTHS[month] + " " + year;
+  grid.innerHTML = "";
+  DAYS.forEach(d => { const el = document.createElement("div"); el.className = "cal-day-name"; el.textContent = d; grid.appendChild(el); });
+  let startDay = new Date(year, month, 1).getDay();
+  startDay = startDay === 0 ? 6 : startDay - 1;
+  for (let i = 0; i < startDay; i++) { const el = document.createElement("div"); el.className = "cal-day empty"; grid.appendChild(el); }
+  const today = new Date(); today.setHours(0,0,0,0);
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(year, month, d);
+    const el = document.createElement("div");
+    el.className = "cal-day";
+    el.textContent = d;
+    if (date < today) {
+      el.classList.add("past");
+    } else {
+      if (date.toDateString() === today.toDateString()) el.classList.add("today");
+      if (selectedDate && date.toDateString() === selectedDate.toDateString()) el.classList.add("selected");
+      el.onclick = () => selectDate(date);
+    }
+    grid.appendChild(el);
+  }
+}
+
+function selectDate(date) {
+  selectedDate = date;
+  pendingTimes = [];
+  renderCalendar();
+  renderTimeTags();
+  const opts = { weekday: 'long', day: 'numeric', month: 'long' };
+  document.getElementById("selected-date-label").textContent =
+    "📅 " + date.toLocaleDateString('fr-FR', opts).replace(/^\w/, c => c.toUpperCase());
+  document.getElementById("time-input").disabled = false;
+  document.getElementById("add-time-btn").disabled = false;
+  document.getElementById("time-input").focus();
+  updateAddCalBtn();
+}
+
+function renderTimeTags() {
+  const container = document.getElementById("time-tags");
+  container.innerHTML = "";
+  pendingTimes.forEach((t, i) => {
+    const tag = document.createElement("div");
+    tag.className = "time-tag";
+    tag.innerHTML = `${t} <button title="Retirer">×</button>`;
+    tag.querySelector("button").onclick = () => { pendingTimes.splice(i, 1); renderTimeTags(); updateAddCalBtn(); };
+    container.appendChild(tag);
+  });
+}
+
+document.getElementById("add-time-btn").onclick = addTime;
+document.getElementById("time-input").addEventListener("keydown", e => { if (e.key === "Enter") addTime(); });
+
+function addTime() {
+  const input = document.getElementById("time-input");
+  const val = input.value.trim();
+  if (!val) return;
+  if (!pendingTimes.includes(val)) { pendingTimes.push(val); renderTimeTags(); updateAddCalBtn(); }
+  input.value = "";
+  input.focus();
+}
+
+function updateAddCalBtn() {
+  document.getElementById("addCalSlots").disabled = !(selectedDate && pendingTimes.length > 0);
+}
+
+document.getElementById("cal-prev").onclick = () => { calDate.setMonth(calDate.getMonth() - 1); renderCalendar(); };
+document.getElementById("cal-next").onclick = () => { calDate.setMonth(calDate.getMonth() + 1); renderCalendar(); };
+
+document.getElementById("addCalSlots").onclick = () => {
+  if (!selectedDate || !pendingTimes.length) return;
+  const opts = { weekday: 'long', day: 'numeric', month: 'long' };
+  const dateLabel = selectedDate.toLocaleDateString('fr-FR', opts).replace(/^\w/, c => c.toUpperCase());
+  pendingTimes.forEach(h => db.ref('slots/' + dateLabel + " " + h).set(false));
+  pendingTimes = [];
+  selectedDate = null;
+  document.getElementById("selected-date-label").textContent = "Sélectionnez une date ci-dessus";
+  document.getElementById("time-input").disabled = true;
+  document.getElementById("add-time-btn").disabled = true;
+  renderCalendar();
+  renderTimeTags();
+  updateAddCalBtn();
+  alert("✅ Créneaux ajoutés !");
+};
+
+renderCalendar();
+loadSlots();
+</script>
+</body>
+</html>
