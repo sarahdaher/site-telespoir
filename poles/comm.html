@@ -1,65 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telespoir - Pôle Communication</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/poles.css">
-    <link rel="stylesheet" href="../css/gallery.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telespoir - Pôle Communication</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/poles.css" />
+    <link rel="stylesheet" href="../css/gallery.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header"></div>
 
-  <!-- HEADER -->
-  <div id="header"></div>
+    <main>
+      <section class="pole-section">
+        <div class="pole-container">
+          <!-- IMAGE PRINCIPALE À GAUCHE -->
+          <div class="pole-image">
+            <img
+              src="../images/Mandats/26-27/Pôles/pole-com2026.webp"
+              alt="Pôle Communication"
+            />
+          </div>
 
-<main>
-  <section class="pole-section">
-  <div class="pole-container">
-    <!-- IMAGE PRINCIPALE À GAUCHE -->
-    <div class="pole-image">
-      <img src="../images/Mandats/25-26/Pôles/com.jpeg" alt="Pôle Communication">
-    </div>
+          <div class="pole-text">
+            <h2>Notre mission au pôle Communication</h2>
+            <p>
+              Le pôle communication réalise, comme son nom l’indique, l’ensemble
+              des communications graphiques ou textuelles !
+            </p>
+            <br />
 
-    <div class="pole-text">
-      <h2>Notre mission au pôle Communication</h2>
-      <p>
-        Le pôle communication réalise, comme son nom l’indique, l’ensemble des communications graphiques ou textuelles !
-      </p> <br>
+            <h2>Nos affiches réalisées</h2>
 
-      <h2>Nos affiches réalisées</h2>
+            <!-- SCROLL DES AFFICHES -->
+            <div class="gallery-scroll">
+              <img src="../images/Affiches/1.jpeg" alt="Affiche 1" />
+              <img src="../images/Affiches/2.jpeg" alt="Affiche 2" />
+              <img src="../images/Affiches/3.jpeg" alt="Affiche 3" />
+              <img src="../images/Affiches/4.jpeg" alt="Affiche 4" />
+              <img src="../images/Affiches/5.jpeg" alt="Affiche 5" />
+              <img src="../images/Affiches/6.jpeg" alt="Affiche 6" />
+              <img src="../images/Affiches/7.jpeg" alt="Affiche 7" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <!-- SCROLL DES AFFICHES -->
-      <div class="gallery-scroll">
-          <img src="../images/Affiches/1.jpeg" alt="Affiche 1">
-          <img src="../images/Affiches/2.jpeg" alt="Affiche 2">
-          <img src="../images/Affiches/3.jpeg" alt="Affiche 3">
-          <img src="../images/Affiches/4.jpeg" alt="Affiche 4">
-          <img src="../images/Affiches/5.jpeg" alt="Affiche 5">
-           <img src="../images/Affiches/6.jpeg" alt="Affiche 6">
-           <img src="../images/Affiches/7.jpeg" alt="Affiche 7">
+      <!-- LIGHTBOX -->
+      <div class="lightbox-overlay" id="lightbox">
+        <span class="close-lightbox">✕</span>
+        <img src="" alt="Image" />
+        <div class="lightbox-controls">
+          <button class="lightbox-prev">◀</button>
+          <button class="lightbox-next">▶</button>
         </div>
       </div>
-    </div>
-  </section>
+    </main>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox-overlay" id="lightbox">
-    <span class="close-lightbox">✕</span>
-    <img src="" alt="Image">
-    <div class="lightbox-controls">
-      <button class="lightbox-prev">◀</button>
-      <button class="lightbox-next">▶</button>
-    </div>
-  </div>
+    <!-- FOOTER -->
+    <div id="footer"></div>
 
-
-</main>
-
-  <!-- FOOTER -->
-  <div id="footer"></div>
-
-  <script src="scripts/script-header-footer.js"></script>
-  <script src="scripts/script-gallery.js"></script>
-</body>
+    <script src="scripts/script-header-footer.js"></script>
+    <script src="scripts/script-gallery.js"></script>
+  </body>
 </html>

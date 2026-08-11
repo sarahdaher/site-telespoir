@@ -1,20 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   fetch("data/course.json")
-    .then(r => r.json())
-    .then(data => {
+    .then((r) => r.json())
+    .then((data) => {
       const taux = data.taux_km_euro || 1;
 
       // Calcul cagnotte totale
-      const totalKmEuros = data.familles.reduce((acc, f) => acc + f.km * taux, 0);
-      const totalDons = data.familles.reduce((acc, f) => acc + f.dons, 0) + (data.dons_directs || 0);
+      const totalKmEuros = data.familles.reduce(
+        (acc, f) => acc + f.km * taux,
+        0,
+      );
+      const totalDons =
+        data.familles.reduce((acc, f) => acc + f.dons, 0) +
+        (data.dons_directs || 0);
       const total = totalKmEuros + totalDons;
 
       // Dernier palier global
-      const dernierPalier = data.paliers_globaux[data.paliers_globaux.length - 1].montant;
+      const dernierPalier =
+        data.paliers_globaux[data.paliers_globaux.length - 1].montant;
       const objectif = Math.max(dernierPalier, total);
 
       // --- Montant total ---
-      document.getElementById("montant-total").textContent = total.toLocaleString("fr-FR") + " €";
+      document.getElementById("montant-total").textContent =
+        total.toLocaleString("fr-FR") + " €";
       document.getElementById("progress-objectif").textContent =
         `Objectif : ${dernierPalier.toLocaleString("fr-FR")} €`;
 
@@ -24,16 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Labels des paliers
       const labelsEl = document.getElementById("progress-labels");
-      data.paliers_globaux.forEach(p => {
+      data.paliers_globaux.forEach((p) => {
         const span = document.createElement("span");
-        span.className = "progress-label" + (total >= p.montant ? " atteint" : "");
+        span.className =
+          "progress-label" + (total >= p.montant ? " atteint" : "");
         span.textContent = p.montant + " €";
         labelsEl.appendChild(span);
       });
 
       // Marqueurs sur la barre
       const barOuter = document.querySelector(".progress-bar-outer");
-      data.paliers_globaux.forEach(p => {
+      data.paliers_globaux.forEach((p) => {
         const pctMarker = (p.montant / dernierPalier) * 100;
         if (pctMarker < 100) {
           const marker = document.createElement("div");
@@ -45,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // --- Défis globaux ---
       const defisEl = document.getElementById("defis-globaux");
-      data.paliers_globaux.forEach(p => {
+      data.paliers_globaux.forEach((p) => {
         const debloque = total >= p.montant;
         const card = document.createElement("div");
         card.className = "defi-card" + (debloque ? " debloque" : "");
@@ -59,19 +67,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // --- Familles ---
       const famillesEl = document.getElementById("familles-grid");
-      data.familles.forEach(f => {
+      data.familles.forEach((f) => {
         const totalFamille = f.km * taux + f.dons;
         const dernierPalierFamille = f.paliers[f.paliers.length - 1].montant;
-        const pctFamille = Math.min((totalFamille / dernierPalierFamille) * 100, 100);
+        const pctFamille = Math.min(
+          (totalFamille / dernierPalierFamille) * 100,
+          100,
+        );
 
-        const defisHTML = f.paliers.map(p => {
-          const debloque = totalFamille >= p.montant;
-          return `
+        const defisHTML = f.paliers
+          .map((p) => {
+            const debloque = totalFamille >= p.montant;
+            return `
             <div class="famille-defi ${debloque ? "debloque" : ""}">
-              <span class="famille-defi-icon">${debloque ? "✅" : "🔒"}</span>
+              <span class="famille-defi-icon">${debloque ? "" : "🔒"}</span>
               <span>${p.defi} <em style="color:#aaa;font-size:0.8rem">(${p.montant} €)</em></span>
             </div>`;
-        }).join("");
+          })
+          .join("");
 
         const card = document.createElement("div");
         card.className = "famille-card";
@@ -110,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const ligne = document.createElement("div");
         ligne.className = "classement-ligne";
         ligne.innerHTML = `
-          <span class="classement-rang ${classes[i] || ""}">${rangs[i] || (i + 1)}</span>
+          <span class="classement-rang ${classes[i] || ""}">${rangs[i] || i + 1}</span>
           <span class="classement-couleur" style="background:${f.couleur}"></span>
           <span class="classement-nom">${f.nom}</span>
           <div class="classement-bar-wrap">
@@ -122,5 +135,5 @@ document.addEventListener("DOMContentLoaded", () => {
         classementEl.appendChild(ligne);
       });
     })
-    .catch(err => console.error("Erreur chargement course.json :", err));
+    .catch((err) => console.error("Erreur chargement course.json :", err));
 });

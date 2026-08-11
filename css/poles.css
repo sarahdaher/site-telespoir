@@ -44,7 +44,7 @@
 
 .pole-text {
   flex: 1;
-  min-width: 300px;
+  min-width: 250px; /* réduit un peu pour laisser plus de place à l'image */
   font-size: 1.05rem;
   line-height: 1.7;
   color: #333;
@@ -57,11 +57,11 @@
 }
 
 .pole-image {
-  flex: 0 0 500px;
-  max-width: 45%;
+  flex: 0 0 650px; /* était 500px */
+  max-width: 55%; /* était 45% */
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   height: 550px;
 }
 
@@ -79,7 +79,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .pole-image {
     max-width: 80%;
   }
@@ -90,16 +90,16 @@
 /* ============================= */
 
 .comm-carousel {
-  overflow-x: auto;           /* permet le scroll horizontal */
+  overflow-x: auto; /* permet le scroll horizontal */
   display: block;
-  white-space: nowrap;        /* les images restent sur la même ligne */
+  white-space: nowrap; /* les images restent sur la même ligne */
   padding-bottom: 10px;
   margin-top: 20px;
 }
 
 .comm-carousel-inner img {
   display: inline-block;
-  height: 200px;              /* hauteur fixe pour le carousel */
+  height: 200px; /* hauteur fixe pour le carousel */
   margin-right: 15px;
   border-radius: 8px;
   object-fit: cover;
@@ -108,7 +108,7 @@
 }
 
 .comm-carousel-inner img:hover {
-  transform: scale(1.05);     /* léger effet zoom au survol */
+  transform: scale(1.05); /* léger effet zoom au survol */
 }
 
 /* Masquer la scrollbar sur Chrome, Edge, Safari */
@@ -131,7 +131,8 @@
     flex-direction: column;
     align-items: center;
   }
-  .pole-image, .pole-text {
+  .pole-image,
+  .pole-text {
     max-width: 90%;
   }
 }
