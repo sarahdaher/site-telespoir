@@ -53,9 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const preloadImages = members.map(member => {
       return new Promise(resolve => {
         const img = new Image();
-        img.src = member.photo;
+
         img.onload = () => resolve(member);
         img.onerror = () => resolve(member);
+
+        img.src = member.photo;
       });
     });
 
