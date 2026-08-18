@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById('members-container');
   const select = document.getElementById('mandat-select');
 
-  fetch("data/membres.json?v=2")
+  fetch("data/membres.json?v=3")
     .then(response => response.json())
     .then(data => {
 
